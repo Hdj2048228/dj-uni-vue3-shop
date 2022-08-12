@@ -21,13 +21,13 @@
 					<view class="tit">
 						<text class="yticon icon-iLinkapp-"></text>
 						DCloud会员
-					
+
 					</view>
 					<text class="e-m">DCloud Union</text>
 					<text class="e-b">开通会员开发无bug 一测就上线</text>
 				</view>
 			</view>
-			
+
 			<view
 					class="cover-container"
 					:style="[{
@@ -40,7 +40,7 @@
 				>
 				<!--  -->
 					<image class="arc" src="/static/arc.png"></image>
-					
+
 					<view class="tj-sction">
 						<view class="tj-item">
 							<text class="num">128.8</text>
@@ -99,10 +99,9 @@
 	</view>
 </template>
 <script lang="ts" setup>
-	import listCell from '@/components/mixListCell'
+	import listCell from '@/components/mixListCell';
 	import { ref,  reactive,computed } from 'vue'
 	import { useUserStore } from '@/store/user'
-	import { useCounterStore } from '@/store/counter'
 	let startY = 0, moveY = 0, pageAtTop = true;
 	const userInfo = computed(()=>{
 		return User.userInfo
@@ -124,20 +123,20 @@
 		gender: number,
 		language: string
 	}
-	
+
 	/**
 	 * 统一跳转接口,拦截未登录路由
 	 * navigator标签现在默认没有转场动画，所以用view
 	 */
-	const navTo = (url)=> {
+	const navTo = (url :string)=> {
 		if(!User.hasLogin){
 			url = '/pages/public/login';
 		}
-		uni.navigateTo({  
+		uni.navigateTo({
 			url
-		})  
+		})
 	}
-		
+
 	/**
 	 *  会员卡下拉和回弹
 	 *  1.关闭bounce避免ios端下拉冲突
@@ -145,14 +144,14 @@
 	 *    transition设置0.1秒延迟，让css来过渡这段空窗期
 	 *  3.回弹效果可修改曲线值来调整效果，推荐一个好用的bezier生成工具 http://cubic-bezier.com/
 	 */
-	 const coverTouchstart = (e)=> {
-		if(pageAtTop === false){
+	 const coverTouchstart = (e : TouchEvent)=> {
+		if(!pageAtTop){
 			return;
 		}
 		coverTransition.value = 'transform .1s linear';
 		startY = e.touches[0].clientY;
 	},
-	coverTouchmove = (e)=> {
+	coverTouchmove = (e: TouchEvent) =>{
 		moveY = e.touches[0].clientY;
 		let moveDistance = moveY - startY;
 		if(moveDistance < 0){
@@ -163,12 +162,12 @@
 		if(moveDistance >= 80 && moveDistance < 100){
 			moveDistance = 80;
 		}
-			
+
 		if(moveDistance > 0 && moveDistance <= 80){
 			coverTransform.value = `translateY(${moveDistance}px)`;
 		}
 	}
-	
+
 	const coverTouchend = ()=> {
 		if(moving.value === false){
 			return;
@@ -193,7 +192,7 @@
 			})
 		}
 	})
-		
+
 	// #endif
 	}
 	const loginOut = ()=>{
@@ -380,5 +379,5 @@
 			}
 		}
 	}
-	
+
 </style>
