@@ -1,8 +1,10 @@
 // "https://github.com/Allen-1998/pinia-auto-refs"
 import { AutoToRefs, ToRef } from 'vue'
 
+import appStore from '@/store/app'
 import cartStore from '@/store/cart'
-import counterStore from '@/store/counter'
+import setupStore from '@/store/setup'
+import testStore from '@/store/test'
 import userStore from '@/store/user'
 
 declare module 'vue' {
@@ -12,8 +14,10 @@ declare module 'vue' {
 }
 
 const storeExports = {
+  app: appStore,
   cart: cartStore,
-  counter: counterStore,
+  setup: setupStore,
+  test: testStore,
   user: userStore,
 }
 

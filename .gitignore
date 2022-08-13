@@ -1,9 +1,4 @@
-dist/
-deploy_versions/
-.temp/
-.rn_temp/
-node_modules/
+node_modules
+dist
+*.local
 .DS_Store
-.idea
-.hbuilderx/
-.vscode/

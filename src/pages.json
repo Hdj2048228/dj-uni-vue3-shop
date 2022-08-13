@@ -1,65 +1,116 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path" : "pages/cart/cart",
-			"style" :
-			{
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
-		}
-	    ,{
-            "path" : "pages/my/my",
-            "style" :
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-
-        } ,
-    ],
-	"tabBar": {
-		"color": "#C0C4CC",
-		"borderStyle": "black",
-		"backgroundColor": "#ffffff",
-		"list": [
-			{
-				"pagePath": "pages/cart/cart",
-				"iconPath": "static/tab-cart.png",
-				"selectedIconPath": "static/tab-cart-current.png",
-				"text": "购物车"
-			},
-			{
-				"pagePath": "pages/index/index",
-				"iconPath": "static/tab-home.png",
-				"selectedIconPath": "static/tab-home-current.png",
-				"text": "首页"
-			},
-	 		// {
-	 		// 	"pagePath": "pages/category/category",
-	 		// 	"iconPath": "static/tab-cate.png",
-	 		// 	"selectedIconPath": "static/tab-cate-current.png",
-	 		// 	"text": "分类"
-	 		// },
-
-			{
-				"pagePath": "pages/my/my",
-				"iconPath": "static/tab-my.png",
-				"selectedIconPath": "static/tab-my-current.png",
-				"text": "my"
-			}
-		]
-	}
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	}
+  "pages": [
+    {
+      "name": "index",
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "name": "category",
+      "path": "pages/category/category",
+      "style": {
+        "navigationBarTitleText": "分类"
+      }
+    },
+    {
+      "path" : "pages/product/list",
+      "style" : {
+        "enablePullDownRefresh": true,
+        "navigationBarTitleText": "商品列表"
+      }
+    },
+    {
+      "path": "pages/product/product",
+      "style": {
+        "navigationBarTitleText": "详情展示",
+        "app-plus": {
+          "titleNView": {
+            "type": "transparent"
+          }
+        }
+      }
+    },
+    {
+      "name": "my",
+      "path": "pages/my/my",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "name": "cart",
+      "path": "pages/cart/cart",
+      "style": {
+        "navigationBarTitleText": "购物车"
+      }
+    },
+    {
+      "name": "login",
+      "path": "pages/public/login",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "name": "profile",
+      "path": "pages/profile/profile",
+      "style": {
+        "navigationBarTitleText": "个人"
+      }
+    }
+  ],
+  "subPackages": [
+    {
+      "root": "pages/test",
+      "pages": [
+        {
+          "name": "test",
+          "path": "test",
+          "style": {
+            "navigationBarTitleText": "测试"
+          }
+        }
+      ]
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#1890ff",
+    "backgroundColor": "#1890ff"
+  },
+  "tabBar": {
+    "color": "#1890ff",
+    "selectedColor": "#3F54F2",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tab-home.png",
+        "selectedIconPath": "static/tab-home-current.png",
+        "text": "首页"
+      },
+      {
+      	"pagePath": "pages/category/category",
+      	"iconPath": "static/tab-cate.png",
+      	"selectedIconPath": "static/tab-cate-current.png",
+      	"text": "分类"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "iconPath": "static/tab-cart.png",
+        "selectedIconPath": "static/tab-cart-current.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "static/tab-my.png",
+        "selectedIconPath": "static/tab-my-current.png",
+        "text": "我的"
+      }
+    ]
+  }
 }
