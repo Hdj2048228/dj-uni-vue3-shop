@@ -88,3 +88,5 @@ export const useCartStore = defineStore('cart',{
 	}
 
 })
+
+export default useCartStore

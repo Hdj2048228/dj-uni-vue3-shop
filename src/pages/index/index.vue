@@ -3,29 +3,31 @@
     <image class="logo" src="/static/logo.png" />
     <view class="text-area">
       <text class="title">{{ title }}</text>
-	  
+
     </view>
 	<view>
-		<button @click="add">++++</button>
-		{{count.count}}
-		<button @click="del">---</button>
+		<button @click="addMethod">++++</button>
+		  {{count}}
+		<button @click="delMethod">---</button>
 	</view>
   </view>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useCounterStore } from '@/store/counter'
-	const title = ref('Hello')
-	const add = ()=>{
-		count.add()
+// import { ref } from 'vue'
+// import { useCounterStore } from '@/store/counter'
+import {useStore} from "/@/helper/pinia-auto-refs";
+  const {add,del,count} = useStore('counter')
+	// const title = ref('Hello')
+	const addMethod = ()=>{
+		add()
 	}
-	const del = ()=>{
-		count.add(-1)
+	const delMethod = ()=>{
+    del()
 	}
-	console.log(useCounterStore)
-	const count = useCounterStore()
-	
+	// console.log(useCounterStore)
+	// const count = useCounterStore()
+	//
 </script>
 
 <style>

@@ -18,9 +18,9 @@
 
 	</view>
 </template>
- 
+
 <script lang="ts" setup>
-	import { reactive,defineEmits } from 'vue'
+	import { reactive } from 'vue'
 	let typeList = reactive({
 					left: 'icon-zuo',
 					right: 'icon-you',
@@ -74,7 +74,7 @@
 		padding: 20upx $page-row-spacing;
 		line-height:60upx;
 		position:relative;
-		
+
 		&.cell-hover{
 			background:#fafafa;
 		}
