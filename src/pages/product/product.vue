@@ -125,7 +125,7 @@
         <button type="primary" class="action-btn no-border buy-now-btn" @click="buy">
           立即购买
         </button>
-        <button type="primary" class="action-btn no-border add-cart-btn" @click="addItemToCart">
+        <button type="primary" class="action-btn no-border add-cart-btn" @click="addItemToCartMethod">
           加入购物车
         </button>
       </view>
@@ -188,7 +188,19 @@ export default {
   },
   setup() {
     return {
-      addItemToCart,
+      addItemToCartMethod(){
+        addItemToCart(
+          {
+            id: Math.random() *10000,
+            title: '新加入的',
+            number: 1,
+            price: 100,
+            attr_val: "XL",
+            stock: 55,
+            image: 'https://gd3.alicdn.com/imgextra/i3/0/O1CN01IiyFQI1UGShoFKt1O_!!0-item_pic.jpg_400x400.jpg'
+          }
+        )
+      },
     }
   },
   data() {

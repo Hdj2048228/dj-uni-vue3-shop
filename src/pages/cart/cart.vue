@@ -35,7 +35,7 @@
               ></view>
             </view>
             <view class="item-right">
-              <text class="clamp title" @click.stop="goToDetail">{{ item.title }}</text>
+              <text class="clamp title" @click.stop="goToDetail(item)">{{ item.title }}</text>
               <text class="attr">{{ item.attr_val }}</text>
               <text class="price">¥{{ item.price }}</text>
               <uni-number-box
@@ -78,7 +78,6 @@
 </template>
 
 <script lang="ts" setup>
-import { onLoad } from '@dcloudio/uni-app'
 
 import { getCartListApi } from '@/api.js'
 import uniNumberBox from '@/components/uni-number-box.vue'
