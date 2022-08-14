@@ -52,7 +52,7 @@ const props = defineProps({
   },
   border: {
     type: String,
-    default: 'b-b',
+    default: 'b-b-b',
   },
   hoverClass: {
     type: String,
