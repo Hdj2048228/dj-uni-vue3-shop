@@ -40,7 +40,7 @@
     </view>
 
     <view class="c-list">
-      <view class="c-row b-b" @click="toggleSpec">
+      <view class="c-row b-b-b" @click="toggleSpec">
         <text class="tit">购买类型</text>
         <view class="con">
           <text v-for="(sItem, sIndex) in specSelected" :key="sIndex" class="selected-text">
@@ -49,12 +49,12 @@
         </view>
         <text class="yticon icon-you"></text>
       </view>
-      <view class="c-row b-b">
+      <view class="c-row b-b-b">
         <text class="tit">优惠券</text>
         <text class="con t-r red">领取优惠券</text>
         <text class="yticon icon-you"></text>
       </view>
-      <view class="c-row b-b">
+      <view class="c-row b-b-b">
         <text class="tit">促销活动</text>
         <view class="con-list">
           <text>新人首单送20元无门槛代金券</text>
@@ -63,7 +63,7 @@
           <text>单笔购买满两件免邮费</text>
         </view>
       </view>
-      <view class="c-row b-b">
+      <view class="c-row b-b-b">
         <text class="tit">服务</text>
         <view class="bz-list con">
           <text>7天无理由退换货 ·</text>
@@ -450,7 +450,7 @@ page {
   display: flex;
   align-items: center;
   color: $font-color-base;
-  background: linear-gradient(left, #fdf5f6, #fbebf6);
+  background: linear-gradient(to left, #fdf5f6, #fbebf6);
   padding: 12upx 30upx;
   .share-icon {
     display: flex;

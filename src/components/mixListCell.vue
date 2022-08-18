@@ -69,7 +69,7 @@ const eventClick = () => {
 </script>
 
 <style lang="scss">
-.icon .mix-list-cell.b-b:after {
+.icon .mix-list-cell.b-b-b:after {
   left: 90upx;
 }
 .mix-list-cell {
@@ -82,7 +82,7 @@ const eventClick = () => {
   &.cell-hover {
     background: #fafafa;
   }
-  &.b-b:after {
+  &.b-b-b:after {
     left: 30upx;
   }
 

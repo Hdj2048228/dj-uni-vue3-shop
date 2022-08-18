@@ -4,7 +4,7 @@
       <view
         v-for="item in categoryData.flist"
         :key="item.id"
-        class="f-item b-b"
+        class="f-item b-b-b"
         :class="{ active: item.id === currentId }"
         @click="tabtap(item)"
       >

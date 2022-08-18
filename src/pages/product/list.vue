@@ -53,11 +53,11 @@
       >
         <scroll-view scroll-y class="cate-list">
           <view v-for="item in cateList" :key="item.id">
-            <view class="cate-item b-b two" @click="changeCate(item)">{{ item.name }}</view>
+            <view class="cate-item b-b-b two" @click="changeCate(item)">{{ item.name }}</view>
             <view
               v-for="tItem in item.child"
               :key="tItem.id"
-              class="cate-item b-b"
+              class="cate-item b-b-b"
               :class="{ active: tItem.id == cateId }"
               @click="changeCate(tItem)"
             >
